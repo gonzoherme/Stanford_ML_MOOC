@@ -1,0 +1,112 @@
+* Math operands
++
+
+-
+
+*multiplication
+
+/division
+
+^to the power of
+
+= equals
+
+~= not equals
+
+sqrt square root
+
+%% "." refers to operations element wise
+
+   A * B = a matrix
+   A .* B = a matrix, but each element of A was multiplied times its respective element in B
+
+   A .^2  %the square of each element in A
+
+   1 ./ v  %the division of 1 divided by each element in the vector v
+
+   v .+ 1 %adding 1 to each element in vector v
+
+log(v)  %logarithm of each element in vector v
+
+abs(v)  %absolute value of each element in vector v
+  abs([-1;2;-3]) = 1 2 3
+
+-v == -1 * v
+
+
+
+
+* Other useful
+
+Comments: %
+
+True: 1
+False: 0
+
+and: &&
+or: ||
+
+display a few decimals: format short
+
+display many decimals: format long
+
+to not automatically print a value: ";" at the end of you line of code
+
+display: disp()
+
+generate a string: sprintf()
+
+anything about any command: help nameofcommand
+
+
+* Variables
+a = 5
+c =  (3>=1)
+
+
+
+
+
+
+* Matrices
+   A = [1 2; 3 4; 5 6]
+Each interval separated by ";" is a row of the matrix
+
+To quickly create matrices:
+   A = ones(1,3) %creates a 1 row by 3 column matrix full of ones
+   A = zeros(1,3) % same thing as previous example but with zeros
+
+   A = rand(3,3) % creates a 3 by 3 matrix with random integers from 0 to 1
+
+
+
+eye(n): used to create an identity matrix. N are the number of columns and rows
+
+size(A): tells you the dimensions of the matrix in matrix format
+     size(A,1): gives you the number of rows
+     size(A,2): gives you the number of columns
+
+A'   %transposed matrix A
+A^-1  %transposed matrix A
+
+pinv(A)  % inverse matrix A, CAREFUL, inverse not the same as transposed
+
+flipud(A)  %flips vertically the matrix A
+
+* Vectors
+  v = [1; 2; 3] %but you can also write it as [1 2 3]
+
+
+To quickly create vectors:
+    v = 1:1:6 (vector from 1 through 6 at intervals of 1)
+    So this automatically creates a vector. Each row is a value from 1(first 
+number) to 6 (last numbers), getting there by intervals of 1 (number in the
+middle)
+
+
+length(v): gives you the n of rows
+
+
+* Graphing
+
+Histogram: hist(variable, ncolumns you want) %ncolumns is optional

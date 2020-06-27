@@ -1,0 +1,13 @@
+Vectorization simply is the act of substituting 'for' and 'while' loops when possible for a one liner with vectors and matrices.
+
+--->Simple example:
+You have a vector 'v' and want to add 1 to every element. Instead of looping through the vector, you write:
+
+v = v + 1
+
+
+
+---> Or if you have that h(x)= theta * x
+Instead of looping through theta and multiplying by x, you make a vector with it:
+
+theta T (Transpose) * x = h(x) 

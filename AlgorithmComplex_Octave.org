@@ -1,0 +1,65 @@
+*** Requirements
+So this algorithm works with with the following:
+   J(theta) = formula
+   derivative of J(theta) with theta 1
+   derivative of J(theta)with theta 2
+
+
+*** Application on octave
+
+%%Here you are implementing the costFunction function
+function [J, gradient] = costFunction(theta)
+
+J = formula;
+
+gradient = zeros (2,1);
+gradient(1) = derivative of J(theta) with theta 1 %%Note: in octave, theta(1) = %%theta0 in math
+gradient(2) = derivative of J(theta) with theta 2
+
+
+%%Here you call the advanced optimization function, aka, Gradient Descent on steroids
+
+options = optimset('GradObj', 'on', 'MaxIter', '100');
+initialTheta = zeros(2,1);
+[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
+
+%% How does it work? First you set options. Options is just a data structure that allows you to set the options for the advanced optimization (GradObj on means that you are providing a gradient to the algorithm, MaxIter 100 sets the max iterations to 100.
+
+%%In initialTheta you are just giving the function a guess for theta values to get it started
+
+
+%%fminunc is the actual function of advanced optimization:
+@costFunction: it is just a pointer to get the value returned from the costFunction
+
+The rest you don't have to understand, it is just like Gradient Descent but you don't have to manually set alpha. You don't have to learn the other commands
+
+
+
+*** Concrete octave example
+So on a file you write the first function, the costFunction
+
+From the octave CMD, you input each line of the second part of what is written above:
+
+    options = ...
+    initialTheta = ...
+    [optTheta, ...
+
+//What does it return?
+1) optTheta = [value1, value2] %%The optimal values for each theta
+
+2) functionVal = value  %%Gives you the value of the function when all the thetas are at their ideal values
+
+3)exitFlag = value %%It lets you verify if the program thinks it has converged or not
+
+
+*** Application on logistic regression
+
+theta = [theta0, theta1 ... thetaN]
+
+function [J, gradient] = costFunction(theta)
+    J = formula J;
+    gradient(1) = derivative of J with theta1;
+    gradient(2) = derivative of J with theta2;
+    ...
+    gradient(n+1) = derivative of J with thetaN;
+

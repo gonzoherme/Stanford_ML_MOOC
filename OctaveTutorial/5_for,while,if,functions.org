@@ -1,0 +1,62 @@
+Break and continue statements are exactly the same as in python
+
+*** If, else, elseif statement
+if i == 6,
+break
+end;
+
+if i == 1,
+disp('hello');
+elseif i == 4,
+disp('hello four');
+else
+disp('hi');
+end;
+
+
+*** For loop
+% indentation doesn't matter
+
+% in this example, v is a vector, so v(i) would be looping through first 10 positions of that vector
+
+for i=1:10,
+v(i) = 2^i;
+end;
+
+
+*** While loop
+i = 1;
+
+while i <=5,
+v(i) = 100;
+i = i+1;
+end;
+
+
+*** Functions
+**** Basics
+% you say function + variable. That variable is what you are going to return. You equal that to the name of the function, which in this case is 'SquareThisNumber(x)'
+
+function solution = SquareThisNumber(x)
+solution = x^2;
+
+
+NOTE: to use a function, you need to first write it on a seperate document, and then specify from the command line that you want to call that function.
+
+For the calling of the function to work, you need to go to the file location through the octave cd and that's it, you don't have to go into the file.
+
+IMPORTANT: if you want to be able to look in a file that is in another path but you don't want to go to that path, you need to tell octave to look into the current path you're in and that one. You do that by typing:
+
+addpath(~/My_Stuff/...)
+
+**** More
+% To return more than one value:
+function = [y1, y2] = squareAndCubeThisNumber(x)
+
+y1 = x^2;
+y2 = x^3;
+
+% If you want to automatically put y1 into a variable and y2 into another when x = 5, do:
+[a,b] = squareAndcubeThisNumber(5)
+
+%a = 25 and b = 125

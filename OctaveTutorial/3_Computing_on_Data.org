@@ -1,0 +1,32 @@
+max(a) %the maximum value of that vector
+
+max(A, [], 1)  %the maximum value of each column in the matrix A. The 1 means first dimension of A (which are the columns)
+
++ max(A, [], 1) == max(A)
+
+
+max(A, [], 2)  %the maximum value of each row in the matrix A. The 2 means second dimension of A (which are the rows)
+
+
+[x,y] = max(a)  % 'x' is the max value in vector 'a' and 'y' is the position/index of that value
+
+max(A)  %it returns the max values of each column of the matrix
+
+a = [1;2;3];
+a < 3
+   1 1 0   %(true, true, false)
+
+find(a<3)  %returns the positions of the values in vector a that are below 3
+
+A = [8 1 6; 3 5 7; 4 9 2;]
+[r,c] = find(A >=7)
+r = [1 3 2]  c = [1 2 3] (r are the rows of A and c the columns)
+
+sum(a) %returns sum of all elements in a 
+prod(a) %returns product of all elements in a
+
+sum(A,1) %sums all the values of each column of the matrix
+sum(A,2) %sums all the values of each row of the matrix
+
+floor(a) %rounds downwards all elements in a
+ceil(a)  %rounds upwards all elements in a

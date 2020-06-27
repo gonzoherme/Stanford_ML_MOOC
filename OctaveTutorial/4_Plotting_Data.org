@@ -1,0 +1,32 @@
+plot(x,y)  % plots with first element as x axis and second element as y axis
+
+hold on;  % the next plot won't substitute the previous plot, they will both be plotted on the same graph
+
+plot(x,y, 'r')  % 'r' means plot with color red
+
+figure(1); plot(x,y) % makes window for the plot
+figure(2); plot(a,b) % instead of substituting previous plot, makes new window with the new plot
+
+xlabel('time')  % names x axis 'time'
+ylabel('value')  % names y axis 'value'
+
+axis([xi xf yi yf])  % used to change the intervals of each axis. First to numbers are the first and last value in the x axis and the third and fourth values are for the y axis
+
+
+subplot(1,2,1)  % divides plot in a 1 by 2 grid, and then accesses first element
+subplot(1,2,2)  % divides plot in a 1 by 2 grid, and then accesses the second element
+
+
+legend('money', 'happiness')  % makes a legend calling first function 'money' and second function 'happiness'
+
+print -dpng 'myplot.png'  % creates file/image called 'myplot.png' of your graph/plot wherever you are directory wise
+
+close  % automatically closes the plot window
+
+clf  % clears the plotting window screen
+
+
+--Visual way of plotting a matrix:
+    imagesc(A)  % cool representation with colors
+    imagesc(A), colormap gray  % same as first example, but using gray as standard color
+    imagesc(A), colormap gray, colorbar  % makes a legend bar on the side of the plot
